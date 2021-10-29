@@ -7,7 +7,7 @@
 
 // Basic Function calculating the number in n position of the fiboacci sequence
 
-// Methodology: Function uses recursion and runs at O(2^n) time which causes it to be sow when taking in large number arguments
+// Methodology: Function uses recursion and runs at O(2^n) time which causes it to be slow when taking in large number arguments
 // Recursion
 const fib = (n) => {
   if (n <= 2) return 1;
@@ -26,7 +26,7 @@ const fibOptimized = (n, memo = {}) => {
 
   if (n <= 2) return 1;
 
-  memo[n] = fib(n - 1, memo) + fib(n - 2, memo);
+  memo[n] = fibOptimized(n - 1, memo) + fibOptimized(n - 2, memo);
   return memo[n];
 };
 
